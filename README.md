@@ -4,11 +4,13 @@
 ![Pygame](https://img.shields.io/badge/Pygame-2.x-green)
 ![Estado](https://img.shields.io/badge/Proyecto-Funcional-brightgreen)
 
+---
+
 ## 🎯 Objetivo del Proyecto
 
-El objetivo principal de este proyecto fue **recrear el clásico juego Atari Pong** utilizando el lenguaje de programación **Python** y la librería **Pygame**, aplicando conceptos de **programación orientada a objetos, diseño de interfaces, control de eventos y manejo de archivos**.
+El propósito de este proyecto fue **recrear el clásico videojuego Atari Pong**, aplicando los principios de **programación orientada a objetos**, **diseño de interfaces**, **manejo de eventos** y **persistencia de datos** mediante archivos JSON.  
 
-Además, se buscó implementar un sistema de **puntuaciones guardadas**, **modos de juego con IA**, **interfaz de menú interactivo**, y una **jugabilidad fluida** inspirada en el clásico de los años 70.
+El juego fue desarrollado con **Python** y la librería **Pygame**, buscando lograr una experiencia fluida, visualmente atractiva y fiel al estilo retro del Pong original, pero con un toque moderno que incluye menús, puntuaciones guardadas y una IA funcional.
 
 ---
 
@@ -16,48 +18,65 @@ Además, se buscó implementar un sistema de **puntuaciones guardadas**, **modos
 
 | Integrante | Rol | Contribución |
 |-------------|-----|--------------|
-| Mishel Cumbal | Programador / Diseñador | Desarrollo del código en Python, estructura del menú, IA y sistema de puntuaciones. |
-| (Agregar nombres si hay más) |  |  |
+| **Mishel Cumbal** | Programador / Diseñador | Desarrollo completo del código, diseño de menús, IA, sistema de puntuaciones y documentación. |
+| *(Agregar si hay más integrantes)* |  |  |
 
 📅 **Fecha de entrega:** 19 de octubre de 2025  
 📘 **Materia:** Programación  
-🏫 **Institución:** Universidad Internacional del Ecuador (UIDE)
+🏫 **Universidad Internacional del Ecuador (UIDE)**  
 
 ---
 
-## ⚙️ Principales Funcionalidades del Código
+## ⚙️ Descripción General del Software
 
-El archivo principal `pong.py` contiene toda la lógica del juego y está estructurado en módulos funcionales para mantener un código limpio y fácil de mantener.
+El proyecto está compuesto por varios módulos integrados que gestionan los distintos aspectos del juego:
 
-### 🔧 1. Configuración general
-- Definición de parámetros del juego (ancho, alto, velocidad, colores, FPS).
-- Inicialización de la ventana con `pygame.display.set_mode()`.
-- Creación de tipografías y temporizador de fotogramas.
+- **Configuración inicial:** Define el tamaño de la ventana, colores, velocidad, FPS y elementos gráficos.  
+- **Interfaz de usuario:** Menú principal con botones interactivos, entrada de nombres y pantalla de puntuaciones.  
+- **IA del juego:** Control automático de la paleta derecha cuando se activa el modo un jugador.  
+- **Sistema de puntuaciones:** Registra automáticamente las partidas jugadas en un archivo `pong_scores.json`.  
+- **Mecánica de colisiones y física:** Controla el rebote de la pelota y la detección de puntos.  
 
-### 💾 2. Sistema de puntuaciones (`pong_scores.json`)
-- Guarda automáticamente las partidas jugadas con nombres de jugadores, marcador y ganador.
-- Permite visualizar las **últimas 10 partidas** desde el menú principal.
-- Uso de JSON para persistir los datos de manera local.
+---
 
-### 🧠 3. Inteligencia Artificial (IA)
-- Modo de un jugador disponible: presionar la tecla **I** para activar/desactivar la IA.
-- La IA controla la paleta derecha de forma automática siguiendo la posición de la pelota.
+## 🧠 Análisis del Desarrollo
 
-### 🎮 4. Interfaz gráfica y menús
-- Pantalla de **inicio** con botones interactivos: *Iniciar Juego*, *Puntuaciones* y *Salir*.
-- Pantalla de **ingreso de nombres** para personalizar a los jugadores.
-- Pantalla de **puntuaciones** mostrando los resultados previos.
+Durante el desarrollo se aplicaron principios de **modularidad** y **claridad estructural** para garantizar que cada parte del código tuviera una función específica.  
+La librería **Pygame** permitió manejar con facilidad el bucle principal del juego, el sistema de eventos (teclas y clics), y el renderizado en tiempo real.
 
-### 🧩 5. Clases implementadas
-- **`Paddle`**: controla el movimiento de las paletas de los jugadores.  
-- **`Ball`**: maneja el movimiento y colisiones de la pelota.  
-- **`Button`**: crea botones con efecto hover y clic.  
-- **`InputBox`**: permite la entrada de texto (nombres de los jugadores).  
+El proyecto también hace uso de:
+- **Archivos JSON** para almacenamiento persistente.  
+- **Listas y clases personalizadas** para manejar objetos en pantalla.  
+- **Condicionales y estructuras de control** para detectar colisiones y determinar el ganador.  
 
-### 🏆 6. Sistema de juego y reinicio
-- Modo **versus** entre dos jugadores o contra la **IA**.  
-- El juego se reinicia automáticamente al alcanzar el **puntaje máximo (5 puntos)**.  
-- Permite **pausar, reiniciar o regresar al menú** con teclas rápidas.  
+---
+
+## 🧩 Estructura del Proyecto
+
+📁 Pong-Atari/
+│
+├── pong.py               # Código principal del juego
+├── pong_scores.json      # Archivo de puntuaciones guardadas
+├── assets/               # (Opcional) Recursos gráficos o de sonido
+└── README.md             # Documentación del proyecto
+
+---
+
+## 🏗️ Clases Principales
+
+### 🟩 `Paddle`
+Controla el movimiento vertical de cada jugador, detecta límites de pantalla y responde a las teclas asignadas.
+
+### ⚪ `Ball`
+Gestiona el movimiento y las colisiones de la pelota con las paletas y los bordes, además del reinicio tras cada punto.
+
+### 🔲 `Button`
+Crea los botones interactivos del menú principal con animación *hover* y detección de clic.
+
+### ✏️ `InputBox`
+Gestiona el ingreso de texto para capturar los nombres de los jugadores antes de iniciar una partida.
+
+> Cada clase está diseñada con independencia funcional y responsabilidad clara, favoreciendo el mantenimiento, la comprensión y futuras ampliaciones del código.
 
 ---
 
@@ -76,12 +95,24 @@ El archivo principal `pong.py` contiene toda la lógica del juego y está estruc
 
 ## 🧠 Mecánica del Juego
 
-- La pelota rebota en los bordes superior e inferior y cambia de dirección al chocar con una paleta.  
-- Cada vez que un jugador no logra devolver la pelota, el oponente suma un punto.  
-- El primer jugador en llegar a **5 puntos** gana la partida.  
-- Tras un ganador, el juego se reinicia automáticamente después de 3 segundos.  
+- La pelota rebota en los bordes superior e inferior.  
+- Al chocar con una paleta, la dirección de la pelota cambia dinámicamente.  
+- Si la pelota pasa una paleta, el jugador contrario suma un punto.  
+- El primer jugador en alcanzar **5 puntos** gana la partida.  
+- Al finalizar una partida, los resultados se guardan automáticamente en el archivo `pong_scores.json`.  
 
 ---
+
+## 🚀 Cómo Ejecutar el Juego
+
+### 🔹 Requisitos previos
+
+1. Tener instalado **Python 3.8 o superior**.  
+2. Instalar la librería **Pygame** ejecutando el siguiente comando:
+
+```bash
+pip install pygame
+
 
 ## 🧩 Estructura del Proyecto
 
