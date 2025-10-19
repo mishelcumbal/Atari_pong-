@@ -14,12 +14,12 @@ El juego fue desarrollado con **Python** y la librería **Pygame**, buscando log
 
 ---
 
-## 👥 Datos del Grupo
+## 👥 Datos del estudiante
 
-| Integrante | Rol | Contribución |
+| estudiante | Rol | Contribución |
 |-------------|-----|--------------|
 | **Mishel Cumbal** | Programador / Diseñador | Desarrollo completo del código, diseño de menús, IA, sistema de puntuaciones y documentación. |
-| *(Agregar si hay más integrantes)* |  |  |
+
 
 📅 **Fecha de entrega:** 19 de octubre de 2025  
 📘 **Materia:** Programación  
@@ -112,7 +112,4 @@ Gestiona el ingreso de texto para capturar los nombres de los jugadores antes de
 
 ```bash
 pip install pygame
-
-
-## 🧩 Estructura del Proyecto
 
